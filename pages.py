@@ -17,7 +17,8 @@ class HomePage(HTMLPage):
         if json_string:
             json_data = json_string.group(0)
             data = json.loads(json_data)
-            menu_data = Dict('menuData/sideMenu/data')(data)
+            cat_child = Dict('children/1/3/children/1/3/children/3/children/1/3/children/1/3')(data)
+            menu_data = Dict('menuData/sideMenu/data')(cat_child)
             assert menu_data
             for item in menu_data:
                 meta_obj = Meta()
@@ -47,7 +48,8 @@ class HomePage(HTMLPage):
         if json_string:
             json_data = json_string.group(0)
             data = json.loads(json_data)
-            menu_data = Dict('menuData/sideMenu/data')(data)
+            cat_child = Dict('children/1/3/children/1/3/children/3/children/1/3/children/1/3')(data)
+            menu_data = Dict('menuData/sideMenu/data')(cat_child)
             assert menu_data
             for item in menu_data:
                 segment_id = Dict('mi_id')(item)
